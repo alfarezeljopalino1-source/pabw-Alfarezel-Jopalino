@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Game yang Pernah Saya Mainkan</title>
+  
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+<body>
+
+    <header>
+        <h1>Daftar Game yang Pernah Saya Mainkan</h1>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="#bagian-1">Daftar Game</a></li>
+                <li><a href="#bagian-2">Tambah Game</a></li>
+                <li><a href="#tentang-saya">Tentang Saya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="bagian-1">
+            <h2>Daftar Game</h2>
+
+            <table>
+    <caption>Daftar Game yang Pernah Saya Mainkan</caption>
+
+    <thead>
+        <tr>
+            <th scope="col">Judul Game</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Platform</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th scope="row">Football Manager 2026</th>
+            <td>Simulasi Sepak Bola</td>
+            <td>PC</td>
+            <td>Sering dimainkan</td>
+        </tr>
+
+        <tr>
+            <th scope="row">EA Sports FC 26</th>
+            <td>Sepak Bola</td>
+            <td>PC</td>
+            <td>Sering dimainkan</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Project Zomboid</th>
+            <td>Survival</td>
+            <td>PC</td>
+            <td>Pernah dimainkan</td>
+        </tr>
+    </tbody>
+</table>
+
+<figure>
+    <img
+        src="./eafc-25-nintendo-screenshots-1.jpg"
+        alt="Tampilan EA Sports FC 25 yang saya mainkan pada Nintendo"
+        width="640"
+        height="360"
+        loading="lazy">
+    <figcaption>EA Sports FC 25 pada Nintendo</figcaption>
+</figure>
+
+</section>
+
+        <section id="bagian-2">
+            <h2>Tambah Game</h2>
+
+            <form action="/simpan" method="post">
+
+            <p>
+                <label for="nama-game">Nama Game</label>
+                <input type="text" id="nama-game" name="nama-game" required>
+            </p>
+
+            <p>
+                <label for="tahun-rilis">Tahun Rilis</label>
+                <input type="number" id="tahun-rilis" name="tahun-rilis"
+                        min="2000" max="2030" required>
+            </p>
+
+            <p>
+                <label for="tanggal-main">Tanggal Mulai Dimainkan</label>
+                <input type="date" id="tanggal-main" name="tanggal-main" required>
+            </p>
+
+            <button type="submit">Simpan</button>
+
+        </form>
+    </section>
+
+    </main>
+
+    <footer id="tentang-saya">
+        <p>Alfarezel Jopalino - 25523086 - 2026</p>
+    </footer>
+
+</body>
+</html>
