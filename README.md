@@ -52,3 +52,8 @@ Karena <main> menandai satu bagian utama dari isi halaman sehingga pembaca layar
 Kriteria selesai saya adalah mengubah --color-primary
 di satu baris dan memastikan tombol, tautan, judul,
 dan garis fokus menggunakan perubahan tersebut.
+
+# CATATAN PENGGUNAAN AI
+- memahami instruksi dan materi CSS Fundamental dan Design Token;
+- membantu menjelaskan penggunaan CSS Variables (design token);
+- membantu menyusun dan memperbaiki aturan CSS pada `base.css`, `layout.css`, dan `komponen.css`
