@@ -1,43 +1,57 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--color-surface);
+.form-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
 }
 
-th,
-td {
-    padding: var(--space-2);
-    border: 1px solid var(--color-border);
-    text-align: left;
+label {
+    font-size: var(--text-sm);
+    font-weight: 600;
 }
 
-button,
-input {
-    padding: var(--space-2);
+input,
+select,
+textarea {
+    font: inherit;
+    padding: var(--space-2) var(--space-3);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-fg);
 }
 
 button {
+    font: inherit;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
     background: var(--color-primary);
-    color: white;
+    color: var(--color-surface);
     cursor: pointer;
 }
 
-button:focus,
-input:focus,
-a:focus {
-    outline: 3px solid var(--color-focus);
+/* Fokus hanya terlihat ketika menggunakan keyboard */
+:focus-visible {
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
 }
 
-figure {
-    margin: var(--space-4) 0;
+/* Jangan menandai input sebelum pengguna berinteraksi */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
 }
 
-form {
-    background: var(--color-surface);
-    padding: var(--card-pad);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-1);
+.pesan-galat {
+    display: none;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat,
+.form-kolom:has(select:user-invalid) .pesan-galat,
+.form-kolom:has(textarea:user-invalid) .pesan-galat {
+    display: block;
 }
