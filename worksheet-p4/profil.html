@@ -17,7 +17,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Game yang Pernah Saya Mainkan</title>
-  
+
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="layout.css">
@@ -27,15 +27,17 @@
 <body>
 
     <header>
-        <h1>Daftar Game yang Pernah Saya Mainkan</h1>
+        <div class="header-baris">
+            <h1>Daftar Game yang Pernah Saya Mainkan</h1>
 
-        <nav aria-label="Navigasi utama">
-            <ul>
-                <li><a href="#bagian-1">Daftar Game</a></li>
-                <li><a href="#bagian-2">Tambah Game</a></li>
-                <li><a href="#tentang-saya">Tentang Saya</a></li>
-            </ul>
-        </nav>
+            <nav aria-label="Navigasi utama">
+                <ul>
+                    <li><a href="#bagian-1">Daftar Game</a></li>
+                    <li><a href="#bagian-2">Tambah Game</a></li>
+                    <li><a href="#tentang-saya">Tentang Saya</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -43,53 +45,72 @@
         <section id="bagian-1">
             <h2>Daftar Game</h2>
 
+            <div class="katalog">
+
+                <article class="kartu">
+                    <h3>EA Sports FC 26</h3>
+                    <p>Game sepak bola yang sering saya mainkan.</p>
+                </article>
+
+                <article class="kartu">
+                    <h3>Football Manager 2026</h3>
+                    <p>Game simulasi manajemen sepak bola.</p>
+                </article>
+
+                <article class="kartu">
+                    <h3>Project Zomboid</h3>
+                    <p>Game survival dengan sistem sandbox.</p>
+                </article>
+
+            </div>
+
             <table>
-    <caption>Daftar Game yang Pernah Saya Mainkan</caption>
+                <caption>Daftar Game yang Pernah Saya Mainkan</caption>
 
-    <thead>
-        <tr>
-            <th scope="col">Judul Game</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Platform</th>
-            <th scope="col">Status</th>
-        </tr>
-    </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Judul Game</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
 
-    <tbody>
-        <tr>
-            <th scope="row">Football Manager 2026</th>
-            <td>Simulasi Sepak Bola</td>
-            <td>PC</td>
-            <td>Sering dimainkan</td>
-        </tr>
+                <tbody>
+                    <tr>
+                        <th scope="row">Football Manager 2026</th>
+                        <td>Simulasi Sepak Bola</td>
+                        <td>PC</td>
+                        <td>Sering dimainkan</td>
+                    </tr>
 
-        <tr>
-            <th scope="row">EA Sports FC 26</th>
-            <td>Sepak Bola</td>
-            <td>PC</td>
-            <td>Sering dimainkan</td>
-        </tr>
+                    <tr>
+                        <th scope="row">EA Sports FC 26</th>
+                        <td>Sepak Bola</td>
+                        <td>PC</td>
+                        <td>Sering dimainkan</td>
+                    </tr>
 
-        <tr>
-            <th scope="row">Project Zomboid</th>
-            <td>Survival</td>
-            <td>PC</td>
-            <td>Pernah dimainkan</td>
-        </tr>
-    </tbody>
-</table>
+                    <tr>
+                        <th scope="row">Project Zomboid</th>
+                        <td>Survival</td>
+                        <td>PC</td>
+                        <td>Pernah dimainkan</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<figure>
-    <img
-        src="./eafc-25-nintendo-screenshots-1.jpg"
-        alt="Tampilan EA Sports FC 25 yang saya mainkan pada Nintendo"
-        width="640"
-        height="360"
-        loading="lazy">
-    <figcaption>EA Sports FC 25 pada Nintendo</figcaption>
-</figure>
+            <figure>
+                <img
+                    src="./eafc-25-nintendo-screenshots-1.jpg"
+                    alt="Tampilan EA Sports FC 25 yang saya mainkan pada Nintendo"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>EA Sports FC 25 pada Nintendo</figcaption>
+            </figure>
 
-</section>
+        </section>
 
         <section id="bagian-2">
             <h2>Tambah Game</h2>
@@ -114,8 +135,8 @@
 
             <button type="submit">Simpan</button>
 
-        </form>
-    </section>
+            </form>
+        </section>
 
     </main>
 
