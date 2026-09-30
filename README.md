@@ -57,3 +57,33 @@ dan garis fokus menggunakan perubahan tersebut.
 - memahami instruksi dan materi CSS Fundamental dan Design Token;
 - membantu menjelaskan penggunaan CSS Variables (design token);
 - membantu menyusun dan memperbaiki aturan CSS pada `base.css`, `layout.css`, dan `komponen.css`
+
+# Worksheet P5 — Layout Responsif
+
+Project ini merupakan hasil pengerjaan Worksheet P5 mengenai penerapan **Flexbox dan CSS Grid** pada halaman web.
+
+## Materi yang Dikerjakan
+
+- Kerangka halaman menggunakan CSS Grid
+- Navbar menggunakan Flexbox
+- Layout sidebar dan konten
+- Galeri kartu adaptif
+- `auto-fit` dan `minmax()`
+- Grid span
+- Named grid area
+- Perbaikan masalah responsif
+- Pengujian pada ukuran layar 360px dan 1280px
+- Penerapan `min-width: 0`
+- Penggunaan `overflow-wrap: anywhere`
+- Pemeriksaan layout dan kerapian halaman
+
+## Struktur Project
+
+```text
+worksheet-p5/
+├── profil.html
+├── tokens.css
+├── base.css
+├── layout.css
+├── komponen.css
+└── tema.css
