@@ -30,3 +30,66 @@ function formatKeahlian(daftar) {
 
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
+
+// ===============================
+// WORKSHEET D
+// ===============================
+
+// D.1 Data profil
+const profilD = {
+    nama: "Alfarezel Jopalino",
+    peran: "Mahasiswa Informatika",
+    keahlian: ["HTML", "CSS", "JavaScript"]
+};
+
+// Array of object
+const daftarProyek = [
+    {
+        judul: "Halaman Profil",
+        tahun: 2026,
+        selesai: true
+    },
+    {
+        judul: "Katalog Produk",
+        tahun: 2026,
+        selesai: false
+    },
+    {
+        judul: "JoCleanCare",
+        tahun: 2026,
+        selesai: true
+    }
+];
+
+console.log(profilD.nama);
+console.log(daftarProyek[0]);
+console.log(daftarProyek[0].judul);
+console.log(profilD["nama"]);
+
+// D.3 Array methods
+
+// filter → mengambil semua proyek yang selesai
+const selesai = daftarProyek.filter(
+    (proyek) => proyek.selesai
+);
+
+// find → mencari satu proyek
+const katalog = daftarProyek.find(
+    (proyek) => proyek.judul === "Katalog Produk"
+);
+
+// map → membuat array baru dari setiap proyek
+const judulProyek = daftarProyek.map(
+    (proyek) => proyek.judul
+);
+
+// reduce → menghitung jumlah seluruh proyek
+const jumlah = daftarProyek.reduce(
+    (total) => total + 1,
+    0
+);
+
+console.log("Proyek selesai:", selesai);
+console.log("Katalog:", katalog);
+console.log("Judul proyek:", judulProyek);
+console.log("Jumlah proyek:", jumlah);
