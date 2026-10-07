@@ -87,3 +87,5 @@ worksheet-p5/
 ├── layout.css
 ├── komponen.css
 └── tema.css
+
+AI membantu saya memahami konsep JavaScript ES6+, memberikan contoh kode, membantu membaca error Console, dan memberikan arahan saat mengerjakan Worksheet A–E. Saya sendiri membuat/menjalankan kode di VS Code, menyalin dan menyesuaikan kode ke project, menjalankan Live Server, memeriksa Console, melakukan debugging, serta memastikan hasilnya sesuai dengan worksheet.
