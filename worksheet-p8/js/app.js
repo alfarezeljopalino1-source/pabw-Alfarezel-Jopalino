@@ -69,9 +69,9 @@ console.log(profilD["nama"]);
 // D.3 Array methods
 
 // filter → mengambil semua proyek yang selesai
-const selesai = daftarProyek.filter(
-    (proyek) => proyek.selesai
-);
+const selesai = daftarProyek.filter((proyek) => {
+    return proyek.selesai;
+});
 
 // find → mencari satu proyek
 const katalog = daftarProyek.find(
@@ -93,3 +93,23 @@ console.log("Proyek selesai:", selesai);
 console.log("Katalog:", katalog);
 console.log("Judul proyek:", judulProyek);
 console.log("Jumlah proyek:", jumlah);
+
+// ===============================
+// WORKSHEET E
+// ===============================
+
+console.log("Worksheet E aktif");
+console.table(daftarProyek);
+console.log(profilD.alamat?.kota);
+
+const elemen = document.querySelector("#judul-yang-tidak-ada");
+
+if (elemen) {
+    console.log(elemen.textContent);
+}
+
+const input = "10";
+
+const angka = Number(input);
+
+console.log(angka + 1);
