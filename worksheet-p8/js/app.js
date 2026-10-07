@@ -17,3 +17,16 @@ const profil = {
 const kalimat = `Nama saya ${profil.nama}, dan saya belajar ${profil.keahlian.length} hal.`;
 
 console.log(kalimat);
+
+// C.1 Fungsi untuk menyusun kalimat perkenalan
+function buatPerkenalan({ nama, peran }) {
+    return `Nama saya ${nama} — ${peran}`;
+}
+
+// C.2 Fungsi untuk merapikan daftar keahlian
+function formatKeahlian(daftar) {
+    return daftar.join(", ");
+}
+
+console.log(buatPerkenalan(profil));
+console.log(formatKeahlian(profil.keahlian));
