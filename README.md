@@ -89,3 +89,18 @@ worksheet-p5/
 └── tema.css
 
 AI membantu saya memahami konsep JavaScript ES6+, memberikan contoh kode, membantu membaca error Console, dan memberikan arahan saat mengerjakan Worksheet A–E. Saya sendiri membuat/menjalankan kode di VS Code, menyalin dan menyesuaikan kode ke project, menjalankan Live Server, memeriksa Console, melakukan debugging, serta memastikan hasilnya sesuai dengan worksheet.
+
+## Catatan Penggunaan AI
+
+Dalam pengerjaan proyek ini, saya menggunakan AI sebagai alat bantu belajar dan debugging, bukan untuk menggantikan seluruh proses pengerjaan.
+
+AI digunakan untuk:
+- Membantu memahami konsep JavaScript ES6+, DOM, event, dan event delegation.
+- Membantu menjelaskan pesan error yang muncul di Console.
+- Membantu mencari penyebab kesalahan pada selector dan event listener.
+- Membantu memberikan contoh sintaks dan langkah debugging menggunakan DevTools.
+- Membantu memeriksa dan memperbaiki kesalahan kode yang saya temukan selama pengerjaan.
+
+Bagian kode dan struktur proyek tetap saya kerjakan dan uji sendiri di VS Code dan browser. Setiap saran dari AI saya periksa kembali dengan menjalankan program dan melihat hasilnya di Console serta halaman web.
+
+AI tidak digunakan untuk menyalin pekerjaan mahasiswa lain. Saya bertanggung jawab terhadap kode, hasil akhir, dan pemahaman terhadap proyek yang dikumpulkan.
