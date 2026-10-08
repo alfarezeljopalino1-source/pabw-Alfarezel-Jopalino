@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Game yang Pernah Saya Mainkan</title>
+
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="responsif.css">
+</head>
+<>
+
+    <header>
+
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Tema gelap</label>
+        
+        <div class="header-baris">
+            <h1>Daftar Game yang Pernah Saya Mainkan</h1>
+
+            <nav aria-label="Navigasi utama">
+                <ul>
+                    <li><a href="#bagian-1">Daftar Game</a></li>
+                    <li><a href="#bagian-2">Tambah Game</a></li>
+                    <li><a href="#tentang-saya">Tentang Saya</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Proyek</h2>
+
+            <div id="filter">
+                <button data-kategori="semua" class="aktif">Semua</button>
+                <button data-kategori="web">Web</button>
+                <button data-kategori="data">Data</button>
+            </div>
+
+            <ul id="daftar"></ul>
+
+            <p id="pesan-kosong" hidden>
+                Tidak ada proyek pada kategori itu.
+            </p>
+        </section>
+
+        <section id="bagian-1">
+            <h2>Daftar Game</h2>
+
+            <div class="katalog">
+
+                <article class="kartu sorotan">
+                    <h3>EA Sports FC 26</h3>
+                    <p>Game sepak bola yang sering saya mainkan.</p>
+                </article>
+
+                <article class="kartu sorotan">
+                    <h3>Football Manager 2026</h3>
+                    <p>Game simulasi manajemen sepak bola.</p>
+                </article>
+
+                <article class="kartu sorotan">
+                    <h3>Project Zomboid</h3>
+                    <p>Game survival dengan sistem sandbox.</p>
+                </article>
+
+            </div>
+
+            <table>
+                <caption>Daftar Game yang Pernah Saya Mainkan</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Judul Game</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Football Manager 2026</th>
+                        <td>Simulasi Sepak Bola</td>
+                        <td>PC</td>
+                        <td>Sering dimainkan</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">EA Sports FC 26</th>
+                        <td>Sepak Bola</td>
+                        <td>PC</td>
+                        <td>Sering dimainkan</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Project Zomboid</th>
+                        <td>Survival</td>
+                        <td>PC</td>
+                        <td>Pernah dimainkan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img
+                    src="./eafc-25-nintendo-screenshots-1.jpg"
+                    alt="Tampilan EA Sports FC 25 yang saya mainkan pada Nintendo"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>EA Sports FC 25 pada Nintendo</figcaption>
+            </figure>
+
+        </section>
+
+        <section id="bagian-2">
+            <h2>Tambah Game</h2>
+
+            <form action="/simpan" method="post">
+
+                    <div class="form-kolom">
+                        <label for="nama-game">Nama Game</label>
+                        <input type="text" id="nama-game" name="nama-game" required>
+                        <p class="pesan-galat">Nama game wajib diisi.</p>
+                    </div>
+
+                    <div class="form-kolom">
+                        <label for="tahun-rilis">Tahun Rilis</label>
+                        <input
+                            type="number"
+                            id="tahun-rilis"
+                            name="tahun-rilis"
+                            min="2000"
+                            max="2030"
+                            required
+                        >
+                        <p class="pesan-galat">Masukkan tahun rilis antara 2000–2030.</p>
+                    </div>
+
+                    <div class="form-kolom">
+                        <label for="tanggal-main">Tanggal Mulai Dimainkan</label>
+                        <input
+                            type="date"
+                            id="tanggal-main"
+                            name="tanggal-main"
+                            required
+                        >
+                        <p class="pesan-galat">Tanggal mulai dimainkan wajib diisi.</p>
+                    </div>
+
+                    <button type="submit">Simpan</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="tentang-saya">
+        <p>Alfarezel Jopalino - 25523086 - 2026</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
+</body>
+</html>
