@@ -44,21 +44,24 @@ const profilD = {
 
 // Array of object
 const daftarProyek = [
-    {
-        judul: "Halaman Profil",
-        tahun: 2026,
-        selesai: true
-    },
-    {
-        judul: "Katalog Produk",
-        tahun: 2026,
-        selesai: false
-    },
-    {
-        judul: "JoCleanCare",
-        tahun: 2026,
-        selesai: true
-    }
+  {
+    judul: "Halaman Profil",
+    tahun: 2026,
+    kategori: "web",
+    selesai: true
+  },
+  {
+    judul: "Katalog Produk",
+    tahun: 2026,
+    kategori: "data",
+    selesai: false
+  },
+  {
+    judul: "Website Portfolio",
+    tahun: 2026,
+    kategori: "web",
+    selesai: true
+  }
 ];
 
 console.log(profilD.nama);
