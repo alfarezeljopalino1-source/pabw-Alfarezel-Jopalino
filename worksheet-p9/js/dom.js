@@ -1,10 +1,19 @@
 import { daftarProyek } from "./app.js";
 
-const daftarEl = document.querySelector("#daftar");
-const filterEl = document.querySelector("#filter");
-const pesanKosongEl = document.querySelector("#pesan-kosong");
+const wadah = document.querySelector("#daftar");
+const kosong = document.querySelector("#pesan-kosong");
 
-console.log("daftarProyek:", daftarProyek);
-console.log("daftarEl:", daftarEl);
-console.log("filterEl:", filterEl);
-console.log("pesanKosongEl:", pesanKosongEl);
+function buatKartu(proyek) {
+  const li = document.createElement("li");
+
+  li.className = "kartu";
+  li.textContent = proyek.judul;
+
+  return li;
+}
+
+wadah.textContent = "";
+
+daftarProyek.forEach((proyek) => {
+  wadah.append(buatKartu(proyek));
+});
