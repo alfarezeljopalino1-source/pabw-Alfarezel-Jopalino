@@ -21,11 +21,16 @@ function buatKartu(proyek) {
 function render(daftar) {
   wadah.textContent = "";
 
+  if (daftar.length === 0) {
+    kosong.hidden = false;
+    return;
+  }
+
+  kosong.hidden = true;
+
   daftar.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
-
-  kosong.hidden = daftar.length !== 0;
 }
 
 function tandaiTombolAktif(tombolAktif) {
@@ -52,3 +57,69 @@ barisFilter.addEventListener("click", (event) => {
 });
 
 render(daftarProyek);
+
+const form = document.querySelector("#bagian-2 form");
+
+const namaGame = document.querySelector("#nama-game");
+const tahunRilis = document.querySelector("#tahun-rilis");
+const tanggalMain = document.querySelector("#tanggal-main");
+
+const tombolSimpan = form.querySelector('button[type="submit"]');
+
+function periksaForm() {
+  let sah = true;
+
+  // Nama Game
+  if (namaGame.value.trim() === "") {
+    namaGame.setAttribute("aria-invalid", "true");
+    sah = false;
+  } else {
+    namaGame.setAttribute("aria-invalid", "false");
+  }
+
+  // Tahun Rilis
+  const tahun = Number(tahunRilis.value);
+
+  if (
+    tahunRilis.value.trim() === "" ||
+    tahun < 2000 ||
+    tahun > 2030
+  ) {
+    tahunRilis.setAttribute("aria-invalid", "true");
+    sah = false;
+  } else {
+    tahunRilis.setAttribute("aria-invalid", "false");
+  }
+
+  // Tanggal Mulai Dimainkan
+  if (tanggalMain.value.trim() === "") {
+    tanggalMain.setAttribute("aria-invalid", "true");
+    sah = false;
+  } else {
+    tanggalMain.setAttribute("aria-invalid", "false");
+  }
+
+  tombolSimpan.disabled = !sah;
+
+  return sah;
+}
+
+namaGame.addEventListener("input", periksaForm);
+tahunRilis.addEventListener("input", periksaForm);
+tanggalMain.addEventListener("input", periksaForm);
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!periksaForm()) {
+    const kolomSalah = form.querySelector(
+      '[aria-invalid="true"]'
+    );
+
+    kolomSalah?.focus();
+
+    return;
+  }
+
+  console.log("Form valid dan siap disimpan.");
+});
