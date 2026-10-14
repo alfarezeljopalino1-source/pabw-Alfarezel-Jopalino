@@ -1,3 +1,5 @@
+import { ambilNotisia } from './api.js';
+
 const nama = "Alfarezel Jopalino";
 const peran = "Mahasiswa Informatika yang belajar front-end";
 const jumlahProyek = 3;
@@ -118,3 +120,11 @@ const angka = Number(input);
 console.log(angka + 1);
 
 export { profil, daftarProyek };
+
+ambilNotisia()
+  .then((data) => {
+    console.log('Data API:', data);
+  })
+  .catch((galat) => {
+    console.error('Gagal mengambil data API:', galat.message);
+  });
