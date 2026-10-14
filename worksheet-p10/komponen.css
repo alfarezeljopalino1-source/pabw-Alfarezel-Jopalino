@@ -1,0 +1,127 @@
+.form-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-fg);
+}
+
+button {
+    font: inherit;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+/* Fokus hanya terlihat ketika menggunakan keyboard */
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+/* Jangan menandai input sebelum pengguna berinteraksi */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
+}
+
+.pesan-galat {
+    display: none;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat,
+.form-kolom:has(select:user-invalid) .pesan-galat,
+.form-kolom:has(textarea:user-invalid) .pesan-galat {
+    display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: var(--space-2);
+  text-align: left;
+}
+
+.galeri {
+    .sorotan {
+        grid-column: span 2;
+    }
+    
+    .papan {
+        grid-row: span 2;
+    }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+
+  display: grid;
+  align-content: start;
+  min-height: 14rem;
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.isi {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  grid-template-areas:
+    "sisi utama"
+    "sisi bawah";
+  gap: var(--space-6);
+}
+
+.sisi {
+  grid-area: sisi;
+}
+
+.utama {
+  grid-area: utama;
+}
+
+.bawah {
+  grid-area: bawah;
+}
+
+.kartu__isi {
+  min-width: 0;
+}
+
+.kartu__judul {
+  overflow-wrap: anywhere;
+}
+
+.kartu {
+  min-width: 0;
+}
