@@ -1,8 +1,13 @@
-import { daftarProyek } from "./data.js";
 
-const state = {
-  daftarProyek: [...daftarProyek],
+import { daftarProyek } from "./data.js";
+import { render } from "./dom.js";
+
+export const state = {
+  daftarProyek,
   kategoriAktif: "semua"
 };
 
-export default state;
+export function pilihKategori(nilai) {
+  state.kategoriAktif = nilai;
+  render(state);
+}

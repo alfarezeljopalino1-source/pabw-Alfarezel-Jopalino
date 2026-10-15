@@ -1,8 +1,3 @@
-export const profil = {
-  nama: "Alfarezel Jopalino",
-  peran: "Mahasiswa Informatika",
-  keahlian: ["HTML", "CSS", "JavaScript"]
-};
 
 export const daftarProyek = [
   {

@@ -1,34 +1,36 @@
-export function render(state) {
-  const wadah = document.querySelector("#daftar");
-  const kosong = document.querySelector("#pesan-kosong");
+const wadah = document.querySelector("#daftar");
+const kosong = document.querySelector("#pesan-kosong");
 
-  if (!wadah || !kosong) {
-    console.error("Elemen daftar proyek tidak ditemukan.");
+function buatKartu(proyek) {
+  const li = document.createElement("li");
+  li.className = "kartu";
+  li.textContent = proyek.judul;
+  return li;
+}
+
+function saring(state) {
+  return state.daftarProyek.filter(
+    (proyek) =>
+      state.kategoriAktif === "semua" ||
+      proyek.kategori === state.kategoriAktif
+  );
+}
+
+export function render(state) {
+  wadah.textContent = "";
+
+  const tampil = saring(state);
+
+  if (tampil.length === 0) {
+    kosong.hidden = false;
     return;
   }
 
-  wadah.textContent = "";
+  kosong.hidden = true;
 
-  const terpilih =
-    state.kategoriAktif === "semua"
-      ? state.daftarProyek
-      : state.daftarProyek.filter(
-          (proyek) =>
-            proyek.kategori === state.kategoriAktif
-        );
-
-  if (terpilih.length === 0) {
-    kosong.hidden = false;
-  } else {
-    kosong.hidden = true;
-
-    terpilih.forEach((proyek) => {
-      const li = document.createElement("li");
-      li.className = "kartu";
-      li.textContent = proyek.judul;
-      wadah.append(li);
-    });
-  }
+  tampil.forEach((item) => {
+    wadah.append(buatKartu(item));
+  });
 
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle(
