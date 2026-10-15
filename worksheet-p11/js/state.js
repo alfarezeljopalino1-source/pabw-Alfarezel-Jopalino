@@ -1,8 +1,8 @@
+import { daftarProyek } from "./data.js";
 
-export const state = {
-    pilihanAktif: "semua"
+const state = {
+  daftarProyek: [...daftarProyek],
+  kategoriAktif: "semua"
 };
 
-export function ubahPilihanAktif(pilihan) {
-    state.pilihanAktif = pilihan;
-}
+export default state;

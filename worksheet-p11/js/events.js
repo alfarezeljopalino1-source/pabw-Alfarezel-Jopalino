@@ -1,50 +1,75 @@
+export function pasangPendengar(state, render) {
+  const barisFilter = document.querySelector("#filter");
 
-import { daftarProyek } from "./data.js";
-import { state, ubahPilihanAktif } from "./state.js";
-import { render, tandaiTombolAktif, periksaForm } from "./dom.js";
+  if (barisFilter) {
+    barisFilter.addEventListener("click", (event) => {
+      const tombol = event.target.closest("button");
 
-const barisFilter = document.querySelector("#filter");
-const form = document.querySelector("#bagian-2 form");
+      if (!tombol || !barisFilter.contains(tombol)) return;
 
-export function pasangEvents() {
-    if (barisFilter) {
-        barisFilter.addEventListener("click", (event) => {
-            const tombol = event.target.closest("button");
+      state.kategoriAktif = tombol.dataset.kategori;
+      render(state);
+    });
+  }
 
-            if (!tombol) return;
+  const form = document.querySelector("#bagian-2 form");
 
-            const kategori = tombol.dataset.kategori;
-            ubahPilihanAktif(kategori);
+  if (!form) return;
 
-            const terpilih = daftarProyek.filter(
-                (proyek) =>
-                    state.pilihanAktif === "semua" ||
-                    proyek.kategori === state.pilihanAktif
-            );
+  const namaGame = document.querySelector("#nama-game");
+  const tahunRilis = document.querySelector("#tahun-rilis");
+  const tanggalMain = document.querySelector("#tanggal-main");
+  const tombolSimpan = form.querySelector(
+    'button[type="submit"]'
+  );
 
-            tandaiTombolAktif(tombol);
-            render(terpilih);
-        });
+  function periksaForm() {
+    const tahun = Number(tahunRilis.value);
+
+    const valid =
+      namaGame.value.trim() !== "" &&
+      tahunRilis.value.trim() !== "" &&
+      tahun >= 2000 &&
+      tahun <= 2030 &&
+      tanggalMain.value.trim() !== "";
+
+    namaGame.setAttribute(
+      "aria-invalid",
+      String(namaGame.value.trim() === "")
+    );
+
+    tahunRilis.setAttribute(
+      "aria-invalid",
+      String(
+        tahunRilis.value.trim() === "" ||
+        tahun < 2000 ||
+        tahun > 2030
+      )
+    );
+
+    tanggalMain.setAttribute(
+      "aria-invalid",
+      String(tanggalMain.value.trim() === "")
+    );
+
+    tombolSimpan.disabled = !valid;
+    return valid;
+  }
+
+  [namaGame, tahunRilis, tanggalMain].forEach((input) => {
+    input.addEventListener("input", periksaForm);
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!periksaForm()) {
+      form.querySelector('[aria-invalid="true"]')?.focus();
+      return;
     }
 
-    if (form) {
-        const namaGame = form.querySelector("#nama-game");
-        const tahunRilis = form.querySelector("#tahun-rilis");
-        const tanggalMain = form.querySelector("#tanggal-main");
+    console.log("Form valid dan siap disimpan.");
+  });
 
-        namaGame?.addEventListener("input", periksaForm);
-        tahunRilis?.addEventListener("input", periksaForm);
-        tanggalMain?.addEventListener("input", periksaForm);
-
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            if (!periksaForm()) {
-                form.querySelector('[aria-invalid="true"]')?.focus();
-                return;
-            }
-
-            console.log("Form valid dan siap disimpan.");
-        });
-    }
+  periksaForm();
 }
