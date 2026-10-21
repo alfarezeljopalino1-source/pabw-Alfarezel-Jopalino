@@ -1,33 +1,26 @@
 <script setup>
-const props = defineProps({
-  kategoriAktif: {
-    type: String,
-    required: true,
-  },
-});
-
-const emit = defineEmits(["pilih"]);
+import { state, pilihKategori } from "../state.js";
 </script>
 
 <template>
   <div>
     <button
-      :class="{ aktif: props.kategoriAktif === 'semua' }"
-      @click="emit('pilih', 'semua')"
+      :class="{ aktif: state.kategoriAktif === 'semua' }"
+      @click="pilihKategori('semua')"
     >
       Semua
     </button>
 
     <button
-      :class="{ aktif: props.kategoriAktif === 'web' }"
-      @click="emit('pilih', 'web')"
+      :class="{ aktif: state.kategoriAktif === 'web' }"
+      @click="pilihKategori('web')"
     >
       Web
     </button>
 
     <button
-      :class="{ aktif: props.kategoriAktif === 'data' }"
-      @click="emit('pilih', 'data')"
+      :class="{ aktif: state.kategoriAktif === 'data' }"
+      @click="pilihKategori('data')"
     >
       Data
     </button>

@@ -1,21 +1,14 @@
 <script setup>
 import { computed } from "vue";
-import { daftarProyek } from "../data.js";
-
-const props = defineProps({
-  kategoriAktif: {
-    type: String,
-    default: "semua",
-  },
-});
+import { state } from "../state.js";
 
 const proyekTampil = computed(() => {
-  if (props.kategoriAktif === "semua") {
-    return daftarProyek;
+  if (state.kategoriAktif === "semua") {
+    return state.daftarProyek;
   }
 
-  return daftarProyek.filter(
-    (proyek) => proyek.kategori === props.kategoriAktif,
+  return state.daftarProyek.filter(
+    (proyek) => proyek.kategori === state.kategoriAktif,
   );
 });
 </script>
